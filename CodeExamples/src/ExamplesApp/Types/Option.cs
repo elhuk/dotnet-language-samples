@@ -1,4 +1,4 @@
-namespace ExamplesApp.Pages.OptionalType;
+namespace Types;
 
 /// <summary>
 /// This class is a way to fix the nullable reference type limitations 
