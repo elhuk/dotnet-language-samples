@@ -2,8 +2,8 @@ namespace Types;
 
 public sealed record Book
 {
-    private Option<string> Title { get; } 
-    private Option<Person> Author { get; }
+    public Option<string> Title { get; }
+    public Option<Person> Author { get; }
 
     private Book(string title, Person author) =>
         (Title, Author) = (
@@ -11,16 +11,17 @@ public sealed record Book
             author is null ? Option<Person>.None() : Option<Person>.Some(author)    
         );
 
-    public static Book CreateNew(string title, Person author) =>
-        new(title, author);
+    public static Book CreateNew(string title, Person author) => new(title, author);
 
-    public override string ToString() =>
-        this.Title
-            .Map(title => $"{title} by ")
-            .Reduce("{   } by ") +
-        this.Author
-            .Map(author => $"{author}")
-            .Reduce("{   }");
+    public string GetBookTitle() => Title.Map(value => value).Reduce("");
+
+    public string GetAuthorFirstName() => Author.Map(value => value).Reduce(new Person()).GetFirstName;
+
+    public string GetAuthorLastName() => Author.Map(value => value).Reduce(new Person()).GetLastName;
+
+    public override string ToString() => Title.Map(title => $"{title} by ").Reduce("") + Author
+        .Map(author => $"{author}")
+        .Reduce("");
 
     public static IEnumerable<Book> BuildBookList()
     {
@@ -70,7 +71,7 @@ public sealed record Book
                 author : null!),
             Book.CreateNew(
                 title : "The Pragmatic Programmer: From Journeyman to Master",
-                author : Person.CreateNew(firstName: "Andrew", lastName: "Andrew")),
+                author : Person.CreateNew(firstName: "Andrew", lastName: "Hunt")),
             Book.CreateNew(
                 title : "Clean Code: A Handbook of Agile Software Craftsmanship",
                 author : Person.CreateNew(firstName: null!, lastName: null!)),

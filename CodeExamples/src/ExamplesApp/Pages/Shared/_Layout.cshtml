@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ExamplesApp</title>
+    <title>@ViewData["Title"] - {EX-APP}</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ExamplesApp.styles.css" asp-append-version="true" />
@@ -14,7 +14,7 @@
             <div class="container">
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">                                  
                     <ul class="navbar-nav flex-grow-1 justify-content-center">
-                        <a class="navbar-brand" asp-area="" asp-page="/Index">E-APP</a>
+                        <a class="navbar-brand" asp-area="" asp-page="/Index"><strong>{EX-APP}</strong></a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -30,9 +30,11 @@
                                 EXAMPLES
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" asp-area="" asp-page="/OptionalType/Index"><i>Optional</i></a>
-                                <a class="dropdown-item" href="#"><i>Blank Item #1</i></a>
+                                <a class="dropdown-item" asp-area="" asp-page="/OptionalType/Index"><i>[01] Optional-Type [def]</i></a>
+                                <a class="dropdown-item" asp-area="" asp-page="/OptionalTypeEF/Index"><i>[02] Optional-Type [ef]</i></a>
+                                <a class="dropdown-item" asp-area="" asp-page="/OptionalTypeAPI/Index"><i>[03] Optional-Type [api]</i></a>
                                 <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-area="" asp-page="/DiscriminatedUnion/Index"><i>Discriminated-Union</i></a>
                                 <a class="dropdown-item" href="#"><i>Blank Item #2</i></a>
                             </div>
                         </li>

@@ -2,8 +2,28 @@
 @using ExamplesApp.Pages.OptionalType
 @model IndexModel
 @{
-    ViewData["Title"] = "Optional Type";
+    ViewData["Title"] = "Optional Type [def]";
 }
 
 <h1>Optional Types</h1>
 <p>This example uses optional type to solve issues with nullable objects</p>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Book</th>
+            <th scope="col">Author</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var (book, i) in Model.Books.Select((b, i) => (b, i)))
+        {
+            <tr>
+                <td>@(i + 1)</td>
+                <td>@(book.GetBookTitle())</td>
+                <td>@(book.GetAuthorFirstName() + " " + book.GetAuthorLastName())</td>
+            </tr>
+        }
+    </tbody>
+</table>
