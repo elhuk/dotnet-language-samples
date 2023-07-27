@@ -1,4 +1,3 @@
-
 namespace Types;
 
 /// <summary>
@@ -24,7 +23,7 @@ namespace Types;
 /// for wrapping an object inside the Option<T>. 
 /// <example>
 /// <code>
-/// The BookLabel expression will alway return a non-null string
+/// The BookLabel expression will always return a non-null string
 /// If you forget that the object might be missing, the code will not compile
 /// This code will not be syntactically correct and semantically incorrect
 /// 
@@ -34,7 +33,7 @@ namespace Types;
 ///     .Reduce(person.FirstName)                           // return firstname if lastname does not exists
 /// 
 /// string GetBookLabel(Book book) => book
-///     .Author
+///     .Author                                             // optional object
 ///     .Map(BookLabel)                                     // if Author exists it is passed to BookLabel function
 ///     .Map(author => $"{book.Title} by {author}")         // returned if Author has a name 
 ///     .Reduce(book.Title);                                // returned if Author does not exists

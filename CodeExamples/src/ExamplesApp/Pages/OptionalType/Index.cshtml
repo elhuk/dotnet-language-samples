@@ -22,7 +22,7 @@
             <tr>
                 <td>@(i + 1)</td>
                 <td>@(book.GetBookTitle())</td>
-                <td>@(book.GetAuthorFirstName() + " " + book.GetAuthorLastName())</td>
+                <td>@($"{book.GetAuthorFirstName()} {book.GetAuthorLastName()}")</td>
             </tr>
         }
     </tbody>
