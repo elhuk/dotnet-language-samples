@@ -1,6 +1,6 @@
+using ExamplesApp.Data.OptionalType;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Types;
 
 namespace ExamplesApp.Pages.OptionalType
 {

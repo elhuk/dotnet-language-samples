@@ -1,7 +1,15 @@
+using ExamplesApp.Data.OptionalTypeEf;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using System.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+//builder.Services.AddDbContext<BookstoreDbContext>(options =>
+//    options.UseSqlite(builder.Configuration.GetConnectionString("Default")));
+
 
 var app = builder.Build();
 

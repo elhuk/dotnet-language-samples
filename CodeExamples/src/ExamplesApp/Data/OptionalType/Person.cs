@@ -1,6 +1,8 @@
-namespace Types;
+using Types;
 
-public sealed record Person 
+namespace ExamplesApp.Data.OptionalType;
+
+public sealed record Person
 {
     public Option<string> FirstName { get; }
     public Option<string> LastName { get; }
@@ -8,8 +10,8 @@ public sealed record Person
     public Person() { }
     private Person(string firstName, string lastName) =>
         (FirstName, LastName) = (
-            firstName is null ? Option<string>.None() : Option<string>.Some(firstName), 
-            lastName is null ?  Option<string>.None() : Option<string>.Some(lastName)
+            firstName is null ? Option<string>.None() : Option<string>.Some(firstName),
+            lastName is null ? Option<string>.None() : Option<string>.Some(lastName)
         );
 
     public static Person CreateNew(string firstName, string lastName) => new(firstName, lastName);

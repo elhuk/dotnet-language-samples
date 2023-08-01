@@ -1,4 +1,6 @@
-namespace Types;
+using Types;
+
+namespace ExamplesApp.Data.OptionalType;
 
 public sealed record Book
 {
@@ -8,7 +10,7 @@ public sealed record Book
     private Book(string title, Person author) =>
         (Title, Author) = (
             title is null ? Option<string>.None() : Option<string>.Some(title),
-            author is null ? Option<Person>.None() : Option<Person>.Some(author)    
+            author is null ? Option<Person>.None() : Option<Person>.Some(author)
         );
 
     public static Book CreateNew(string title, Person author) => new(title, author);
@@ -27,52 +29,52 @@ public sealed record Book
     {
         return new Book[]
         {
-            Book.CreateNew(
+            CreateNew(
                 title : "Patterns of Enterprise Application Architecture",
                 author : Person.CreateNew(firstName : "Martin", lastName : "Fowler")),
-            Book.CreateNew(
+            CreateNew(
                 title : "Clean Architecture: A Craftsman's Guide to Software Structure and Design",
                 author: Person.CreateNew(firstName: "Robert C.", lastName: "Martin")),
-            Book.CreateNew(
+            CreateNew(
                 title : "The Art of Computer Programming",
                 author : Person.CreateNew(firstName: "Donald", lastName: null!)),
-            Book.CreateNew(
+            CreateNew(
                 title : "CODE: The Hidden Language of Computer Hardware and Software",
                 author : Person.CreateNew(firstName: "Charles", lastName: null!)),
-            Book.CreateNew(
+            CreateNew(
                 title : "Agile Software Development: Principles, Patterns, and Practices",
                 author : Person.CreateNew(firstName: "Uncle Bob", lastName: null!)),
-            Book.CreateNew(
+            CreateNew(
                 title : "Introduction to Algorithms",
                 author : Person.CreateNew(firstName: "Thomas H.", lastName: "Cormen")),
-            Book.CreateNew(
+            CreateNew(
                 title : "Head First Design Patterns: A Brain-Friendly Guide",
                 author : Person.CreateNew(firstName: "Eric", lastName: "Freeman")),
-            Book.CreateNew(
+            CreateNew(
                 title : "Cracking the Coding Interview: 189 Programming Questions and Solutions",
                 author : Person.CreateNew(firstName: "Gayle L.", lastName: null!)),
-            Book.CreateNew(
+            CreateNew(
                 title : "Don't Make Me Think: A Common Sense Approach to Web Usability",
                 author : Person.CreateNew(firstName: "Steve", lastName: null!)),
-            Book.CreateNew(
+            CreateNew(
                 title : "The Clean Coder: A Code of Conduct for Professional Programmers",
                 author : Person.CreateNew(firstName: null!, lastName: null!)),
-            Book.CreateNew(
+            CreateNew(
                 title : "Soft Skills: The Software Developer's Life Manual",
                 author : Person.CreateNew(firstName: null!, lastName: null!)),
-            Book.CreateNew(
+            CreateNew(
                 title : "Working Effectively with Legacy Code",
                 author : null!),
-            Book.CreateNew(
+            CreateNew(
                 title : "Design Patterns: Elements of Reusable Object-Oriented Software",
                 author : null!),
-            Book.CreateNew(
+            CreateNew(
                 title : "Code Complete: A Practical Handbook of Software Construction",
                 author : null!),
-            Book.CreateNew(
+            CreateNew(
                 title : "The Pragmatic Programmer: From Journeyman to Master",
                 author : Person.CreateNew(firstName: "Andrew", lastName: "Hunt")),
-            Book.CreateNew(
+            CreateNew(
                 title : "Clean Code: A Handbook of Agile Software Craftsmanship",
                 author : Person.CreateNew(firstName: null!, lastName: null!)),
         };

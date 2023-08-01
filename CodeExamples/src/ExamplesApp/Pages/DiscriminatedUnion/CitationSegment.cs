@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Rewrite;
-using System.Drawing;
-using System.Text.RegularExpressions;
-
-namespace ExamplesApp.Pages.DiscriminatedUnion;
+﻿namespace ExamplesApp.Pages.DiscriminatedUnion;
 
 // Discriminated Union implementation using records which is equivalent
 // what F# language supports out of the box
